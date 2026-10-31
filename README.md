@@ -2,6 +2,8 @@
 
 Converts mouse sensitivity between 32 games by matching cm/360, and compares settings across a group of friends.
 
+[Download for Windows](https://github.com/p1nkmaanW/sens-converter/releases/latest)
+
 ```bash
 npm install
 npm run app
