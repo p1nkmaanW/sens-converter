@@ -1,0 +1,51 @@
+{
+  "name": "sens-converter",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "app": "npm run build && electron .",
+    "dist": "npm run build && electron-builder --win portable"
+  },
+  "dependencies": {
+    "@fontsource/chakra-petch": "^5.3.0",
+    "@fontsource/russo-one": "^5.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.8"
+  },
+  "description": "Mouse sensitivity converter for 32 games",
+  "author": "Adem Bouzazi",
+  "main": "electron/main.cjs",
+  "build": {
+    "appId": "dev.sensconverter.app",
+    "productName": "Sens Converter",
+    "files": [
+      "dist/**",
+      "electron/**"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": "portable",
+      "icon": "electron/icon.png"
+    },
+    "portable": {
+      "artifactName": "SensConverter-${version}.exe"
+    }
+  }
+}
